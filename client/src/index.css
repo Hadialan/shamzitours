@@ -1,0 +1,438 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    padding: 20px; /* Added some padding for better spacing */
+}
+.logo{
+    height: 120px;
+    width: 140px;
+   
+}
+
+
+.menu {display: flex;}
+.menu li{
+    padding-left: 30px;
+    list-style: none;
+}
+.menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: white; /* Default color, might need adjustment based on background */
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    padding-right: 20px;
+    font-size: 1.1rem;
+
+}
+
+/* Navbar link color override for white background pages if needed */
+.navbar-dark .menu li a {
+    color: white;
+}
+.navbar-light .menu li a {
+    color: black;
+}
+
+
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: red;
+    transition: 0.3s ease-in-out;
+
+}
+.menu li a:hover{
+    transform: scale(1.1);
+    /* box-shadow: 0 8px 16px rgba(175, 21, 21, 0.3); Removed box-shadow on text as it looks odd */
+    color: red;
+
+}
+.menu li a:hover:after {
+    width: 100%;
+}
+.hero{
+    height: 100vh;
+    width: 100%;
+    /* Update path for React public folder */
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(/images/—Pngtree—the\ skyline\ in\ dubai\ with_3621860.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.hero nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.hero h1 {
+    color: white;
+    padding-left: 70px;
+    padding-top: 180px; /* Adjusted to account for navbar */
+    font-size: 5rem;
+    font-weight: 700;
+
+}
+.hero p{
+    color: white;
+    padding-left: 70px;
+    padding-top: 10px;
+    font-size: 2rem;
+    font-weight: 300;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, Arial, Helvetica, sans-serif;
+
+
+}
+
+@media (max-width: 700px){
+    .hero h1{
+        flex-direction: column;
+        font-size: 50px;
+        padding-left: 20px;
+    }
+    .hero p{
+       font-size: 30px;
+        padding-left: 20px;
+    }
+}
+
+.open-menu , .close-menu {
+    position: absolute;
+    color: white; /* Changed to white for visibility on hero */
+    cursor: pointer;
+    font-size: 2rem;
+    display: none;
+}
+.open-menu {
+    top: 30px;
+    right: 20px;
+    /* transform: translateY(-50%); REMOVED */
+}
+.close-menu {
+    top: 20px;
+    right: 20px;
+}
+#check{
+    display: none;
+}
+@media(max-width: 700px){
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: #0f0e0f;
+        transition: all 0.3s ease-in-out;
+    }
+    .menu.active {
+        right: 0;
+    }
+    .menu li {
+        margin-top: 20px;
+    }
+    .menu li a{padding: 10px; font-size: 1.5rem;}
+    .open-menu {display: block;}
+    .close-menu {display: block;} 
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+.container-fluid.p-0 {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+  }
+  .fly-high {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);   
+}
+.Services{
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    color: rgb(1, 136, 129);
+    filter: drop-shadow(1px 1px 2px #504b4b);
+    margin-top: 20px;
+
+}
+.card {
+    padding: 10px;
+    transition: transform 0.3s;
+    height: 100%;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.card-body{
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+.card img {
+    border-radius: 5px;
+    height: 200px;
+    object-fit: cover;
+}
+.col-md-4 {
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.flight{
+    height: 600px;
+    width: 100%;
+    
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*contact*/
+.contact-bar {
+    font-size: 16px;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(0, 0, 0);
+    padding: 10px 0;
+    color: white;
+}
+.contact-bar a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-left: 5px;
+}
+.contact-bar p {
+    margin: 0;
+}
+.contact-bar a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+@media (max-width: 700px){
+    .contact-bar{
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
+
+/*carousal*/
+
+.carousel-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    background: #ffe7e7;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+/* Duplicate the track content in React ensures seamless infinite scroll */
+
+.carousel-track img {
+    width: 150px;
+    margin: 0 30px;
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}
+
+.carousel-track img:hover {
+    transform: scale(1.1);
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } /* Adjusted for doubled content */
+}
+.slide-img{
+    padding: 30px;
+    filter: drop-shadow(3px 3px 7px #000);
+}
+
+.quote{
+    text-align: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.image-text-section {
+    display: flex;
+    width: 90%;
+    max-width: 1100px;
+    background: white;
+    padding: 40px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    align-items: center;
+    gap: 30px;
+}
+.image-text-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.image-section {
+    flex: 1;
+}
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+.text-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.text-section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    .image-text-section, .image-text-section.reverse {
+        flex-direction: column;
+        padding: 20px;
+        width: 95%;
+    }
+}
+
+.shamzi{
+    width: 240px;
+    height: 200px;
+    margin: 0 auto;
+    text-align: center;
+    filter: drop-shadow(1px 1px 2px #504b4b);
+}
+
+footer{
+    background-color: #241e1e;
+    color: white;
+    padding-top: 40px;
+}
+.footerContainer{
+    width: 100%;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%; /* Perfect circle */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+.socialIcons a i{
+    font-size: 1.5em;
+    color: black;
+}
+/*hover effect*/
+.socialIcons a:hover{
+    background-color: black;
+    transform: translateY(-5px);
+}
+.socialIcons a:hover i{
+    color: red;
+}
+.footerNav{
+    margin: 30px 0;
+}
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+.footerNav ul li a{
+    color: rgb(255, 255, 255);
+    margin: 15px;
+    text-decoration: none;
+    font-size: 1.2em;
+    opacity: 0.9;
+    transition: 0.5s;
+    display: block;
+}
+.footerNav ul li a:hover{
+    transform: scale(1.1);
+    color: red;
+}
+.footerBottom{
+    background-color: #110a0a;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.footerBottom p{
+    color: rgb(141, 139, 139);
+    margin-bottom: 5px;   
+}
+
+@media (max-width: 700px){
+    .footerNav ul{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footerNav ul li{
+        margin: 5px;
+    }
+}
