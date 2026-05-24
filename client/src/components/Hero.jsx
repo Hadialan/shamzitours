@@ -1,10 +1,21 @@
 import React from 'react';
+import Navbar from './Navbar';
 
 const Hero = () => {
     return (
         <div className="hero">
-            <h1>Fly High, <br />Pay low!</h1>
-            <p>Discover the cheapest <br />flight tickets <br />today!</p>
+            <Navbar />
+            <div className="hero-content">
+                <h1 className="animate-fade-in-up">Fly High, <br />Pay Low!</h1>
+                <p className="animate-fade-in-up delay-1">Discover the Cheapest <br />Flight Tickets Today!</p>
+                <div className="hero-buttons animate-fade-in-up delay-2">
+                    <a href="/services" className="btn-primary">Explore Services</a>
+                    <a href="/destinations" className="btn-secondary">Browse Destinations</a>
+                </div>
+            </div>
+            <div className="scroll-indicator">
+                <span></span>
+            </div>
         </div>
     );
 };
